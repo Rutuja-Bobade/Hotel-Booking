@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Booking | Welcome</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">HotelBooking</div>
+        <ul class="nav-links">
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Signup</a></li>
+        </ul>
+    </nav>
+
+    <div class="slideshow-container">
+      <div class="slide fade">
+          <img src="https://images.unsplash.com/photo-1558959357-685f9c7ace7b?auto=format&fit=crop&w=1200&q=80" alt="Hotel 1">
+      </div>
+      <div class="slide fade">
+        <img src="/images/slideshow2.jpg" alt="Hotel 2">
+      </div>
+      <div class="slide fade">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80" alt="Hotel 3">
+      </div>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to Hotel Booking</h1>
+        <p>Find and book the perfect stay with ease and convenience.</p>
+        <a href="/login" class="btn">Get Started</a>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // 2 seconds
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Hotel Details</title>
+    <link rel="stylesheet" href="/css/addhotel.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Add Hotel Details</h2>
+        <p>User ID: <strong><%= userid %></strong></p>
+
+        <form action="/user/<%= userid %>/addhoteldetails" method="POST">
+            <label for="hotelid">Hotel ID:</label>
+            <input type="text" name="hotelid" required>
+
+            <label for="name">Hotel Name:</label>
+            <input type="text" name="name" required>
+
+            <label for="location">Location:</label>
+            <input type="text" name="location" required>
+
+            <label for="description">Description:</label>
+            <input type="text" name="description" required>
+
+            <label for="ACroomprice">Price of AC Room:</label>
+            <input type="number" name="ACroomprice" required>
+
+            <label for="NONACroomprice">Price of NON-AC Room:</label>
+            <input type="number" name="NONACroomprice" required>
+
+            <label for="couple">Couple Room Price:</label>
+            <input type="number" name="couple" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

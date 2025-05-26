@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Bookings</title>
+    <link rel="stylesheet" href="/css/display.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My Hotel Bookings</h1>
+        <% if (bookings.length === 0) { %>
+            <p>No bookings yet.</p>
+        <% } else { %>
+            <div class="booking-list">
+                <% bookings.forEach(booking => { %>
+                    <div class="booking-card">
+                        <h2><%= booking.hotel_name %></h2>
+                        <p><strong>Location:</strong> <%= booking.location %></p>
+                        <p><strong>Booked by:</strong> <%= booking.name %></p>
+                        <p><strong>Check-in:</strong> <%= booking.checkin.toDateString() %></p>
+                        <p><strong>Check-out:</strong> <%= booking.checkout.toDateString() %></p>
+                        <p><strong>People:</strong> <%= booking.num_of_people %></p>
+                        <p><strong>AC Rooms:</strong> <%= booking.ac_rooms %></p>
+                        <p><strong>Non-AC Rooms:</strong> <%= booking.nonac_rooms %></p>
+                        <p><strong>Couple Rooms:</strong> <%= booking.couple_rooms %></p>
+                        <p><strong>Total Price:</strong> ₹<%= booking.total_price %></p>
+                    </div>
+                <% }) %>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

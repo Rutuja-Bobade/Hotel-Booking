@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Hotels</title>
+    <link rel="stylesheet" href="/css/viewhotel.css">
+</head>
+<body>
+    <h2>Available Hotels</h2>
+    <div class="grid-container">
+        <% for (let hotel of hotels) { %>
+            <div class="card">
+                <h3><%= hotel.name %></h3>
+                <p><strong>Location:</strong> <%= hotel.location %></p>
+                <p><%= hotel.description %></p>
+                <form action="/user/<%= userid %>/hotel/<%= hotel.hotelid %>" method="post">
+                    <button type="submit">Book Now</button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

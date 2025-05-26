@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <%= user.username %></h1>
+
+        <div class="buttons">
+            <form action="/user/<%= user.userid %>/addhotel" method="get">
+                <button type="submit" class="btn">Add Hotel</button>
+            </form>
+
+            <form action="/user/<%= user.userid %>/viewhotel" method="get">
+                <button type="submit" class="btn">View Hotels</button>
+            </form>            
+
+            <form action="/user/<%= user.userid %>/display" method="get">
+                <button type="submit" class="btn">View My Bookings</button>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>
